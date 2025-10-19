@@ -1,0 +1,110 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123"
+    }
+  ],
+  "recetas": [
+    {
+      "id": 1,
+      "titulo": "Tarta de manzana.",
+      "descripcion": "Deliciosa tarta con masa casera y manzanas caramelizadas.    ",
+      "ingredientes": [
+        {
+          "nombre": "huevos",
+          "cantidad": "2"
+        },
+        {
+          "nombre": "harina ",
+          "cantidad": "200kg"
+        },
+        {
+          "nombre": "manzanas ",
+          "cantidad": "5"
+        },
+        {
+          "nombre": "mantequilla",
+          "cantidad": "1/2"
+        }
+      ],
+      "pasos": [
+        "primero mesclamos todo ",
+        "mezclar",
+        "preparar"
+      ],
+      "comentarios": ""
+    },
+    {
+      "id": 1760810409706,
+      "titulo": "alfajores",
+      "descripcion": "dulce argentino ",
+      "ingredientes": [
+        {
+          "nombre": "harina ",
+          "cantidad": "200kg"
+        },
+        {
+          "nombre": "dulce de leche ",
+          "cantidad": "1/2kl"
+        },
+        {
+          "nombre": "coco",
+          "cantidad": "2"
+        }
+      ],
+      "pasos": [
+        "primero se hacen las galletas "
+      ],
+      "comentarios": ""
+    },
+    {
+      "id": 1760810438345,
+      "titulo": "torta de tres leches ",
+      "descripcion": "torta venezolana muy buena ",
+      "ingredientes": [],
+      "pasos": [],
+      "comentarios": ""
+    },
+    {
+      "id": 1760812390379,
+      "titulo": "pastel de chocolate ",
+      "descripcion": "tgrota de triple chocolate ",
+      "ingredientes": [],
+      "pasos": [],
+      "comentarios": ""
+    },
+    {
+      "id": 1760812479093,
+      "titulo": "galletas de maní",
+      "descripcion": "galletas con mantequilla de maní",
+      "ingredientes": [],
+      "pasos": [],
+      "comentarios": ""
+    },
+    {
+      "id": 1760817212516,
+      "titulo": "arroz con leche",
+      "descripcion": "hdu",
+      "ingredientes": [],
+      "pasos": [],
+      "comentarios": ""
+    },
+    {
+      "id": 1760828312527,
+      "titulo": "pastel de levhe",
+      "descripcion": "svhznd dvjbn",
+      "ingredientes": [
+        {
+          "nombre": "cdv",
+          "cantidad": "dv"
+        }
+      ],
+      "pasos": [
+        "grwsg"
+      ],
+      "comentarios": "dnvhnzhdnhjv nhjndhzncxh nh"
+    }
+  ]
+}

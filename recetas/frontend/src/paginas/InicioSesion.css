@@ -1,0 +1,437 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, #2b1b3a 0%, #120719 60%);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de fondo con burbujas */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(70,20,60,0.45), rgba(30,10,30,0.6));
+  z-index: 0;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(1deg); }
+}
+
+/* ===== TARJETA DE LOGIN ===== */
+.login-card {
+  background: linear-gradient(180deg, rgba(120,63,155,0.18), rgba(68,24,77,0.22));
+  backdrop-filter: blur(10px);
+  border-radius: 32px;
+  /* más alto arriba para que el avatar tenga espacio y quede visible */
+  padding: 110px 72px 60px 72px;
+  box-shadow: 0 40px 90px rgba(10,6,20,0.7);
+  position: relative;
+  width: 100%;
+  max-width: 760px; /* reducir ancho total de la tarjeta */
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  overflow: visible; /* permitir que el avatar sobresalga y sea visible */
+}
+
+/* ===== ICONO DE USUARIO ===== */
+.usuario-icono {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.icono-circulo {
+  width: 110px;
+  height: 110px;
+  background: rgba(20,10,30,0.75);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+  border: 4px solid rgba(255, 255, 255, 0.08);
+}
+
+.icono-circulo svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ===== FORMULARIO PERSONALIZADO ===== */
+.formulario-login .formulario-contenedor {
+  /* panel interior blanco, centrado y claramente más pequeño que la tarjeta morada */
+  background: rgba(255,255,255,0.98);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+  padding: 26px 32px 32px 32px;
+  border-radius: 10px;
+  margin: 20px auto 0 auto; /* centrar dentro de la tarjeta y separarlo del avatar */
+  width: 100%;
+  max-width: 420px; /* reducir ancho del panel blanco para que quede contenido */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* inputs llenarán el ancho del panel */
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* wrapper externo para asegurar que el componente Formulario quede contenido y centrado */
+.formulario-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 6px;
+}
+
+.formulario-login .formulario-header {
+  display: none;
+}
+
+.formulario-login .formulario {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulario-login .formulario-campos {
+  gap: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* que los inputs ocupen todo el ancho del panel */
+}
+
+/* ===== CAMPOS DE INPUT ===== */
+.formulario-login .formulario-campo {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* que el input ocupe todo el ancho del panel */
+}
+
+.formulario-login .formulario-input {
+  background: rgba(255,255,255,0.98);
+  border: none;
+  border-radius: 4px;
+  padding: 12px 14px 12px 48px;
+  color: #2b1b3a;
+  font-size: 15px;
+  font-weight: 500;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.18s ease;
+}
+
+.formulario-login .formulario-input::placeholder {
+  color: rgba(80,60,80,0.45); /* placeholder oscuro sobre fondo blanco */
+  font-weight: 400;
+}
+
+.formulario-login .formulario-input:focus {
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(40,10,50,0.35);
+  background: rgba(255,255,255,1);
+}
+
+.formulario-login .formulario-input:focus::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Iconos dentro de los inputs */
+.formulario-login .formulario-campo::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Icono de email */
+.formulario-login .formulario-campo:first-child::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232b1b3a' viewBox='0 0 24 24'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Icono de candado */
+.formulario-login .formulario-campo:last-child::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232b1b3a' viewBox='0 0 24 24'%3E%3Cpath d='M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* ===== BOTÓN DE LOGIN ===== */
+.formulario-login .formulario-botones {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.formulario-login .btn-login {
+  background: linear-gradient(90deg, #3b1740, #5f2b70);
+  border: none;
+  border-radius: 6px;
+  padding: 14px 26px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  width: 60%; /* botón más corto que el panel, centrado */
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 18px 40px rgba(80,30,90,0.22);
+  position: relative;
+  overflow: hidden;
+  margin: 8px auto 0 auto;
+}
+
+.formulario-login .btn-login:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.3);
+  background: #34495e;
+}
+
+.formulario-login .btn-login:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(44, 62, 80, 0.2);
+}
+
+.formulario-login .btn-login:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== OPCIONES ADICIONALES ===== */
+.opciones-adicionales {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding: 0 8px 0 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.remember-me-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.9);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.remember-me-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  accent-color: #2c3e50;
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #ffd6ff;
+  text-decoration: underline;
+}
+
+/* ===== MENSAJES DE ERROR ===== */
+.formulario-login .formulario-mensaje.error {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.formulario-login .formulario-mensaje.exito {
+  background: rgba(39, 174, 96, 0.1);
+  color: #27ae60;
+  border: 1px solid rgba(39, 174, 96, 0.2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ===== SPINNER PERSONALIZADO ===== */
+.formulario-login .spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 15px;
+  }
+  
+  .login-card {
+    padding: 30px 20px 25px 20px;
+    border-radius: 15px;
+  }
+  
+  .formulario-login .formulario-input {
+    padding: 16px 18px 16px 50px;
+    font-size: 15px;
+  }
+  
+  .formulario-login .btn-login {
+    padding: 16px;
+    font-size: 15px;
+  }
+  
+  .opciones-adicionales {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .remember-me-checkbox {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .login-card {
+    padding: 25px 15px 20px 15px;
+  }
+  
+  .formulario-login .formulario-input {
+    padding: 14px 16px 14px 45px;
+  }
+  
+  .formulario-login .formulario-campo::before {
+    left: 15px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ===== ANIMACIONES DE ENTRADA ===== */
+.login-card {
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.usuario-icono {
+  animation: bounceIn 0.8s ease-out 0.2s both;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.05);
+  }
+  70% {
+    transform: translateX(-50%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+/* ===== EFECTOS DE HOVER MEJORADOS ===== */
+.formulario-login .formulario-input:hover:not(:focus) {
+  background: #34495e;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(44, 62, 80, 0.25);
+}
+
+.formulario-login .btn-login::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.formulario-login .btn-login:hover::before {
+  left: 100%;
+}
+
+/* ===== ACCESIBILIDAD ===== */
+@media (prefers-reduced-motion: reduce) {
+  .login-container::before,
+  .login-card,
+  .usuario-icono,
+  .formulario-login .formulario-input,
+  .formulario-login .btn-login {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Focus visible para mejor accesibilidad */
+.formulario-login .formulario-input:focus-visible,
+.formulario-login .btn-login:focus-visible {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}

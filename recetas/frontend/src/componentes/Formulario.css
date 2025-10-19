@@ -1,0 +1,223 @@
+/* Estilos para el formulario de recetas */
+.formulario-modal {
+  position: relative;
+  padding: 32px 28px 24px 28px;
+  min-width: 500px;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.formulario-titulo {
+  color: #a259e6;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.formulario-receta {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formulario-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formulario-campo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.formulario-label {
+  font-weight: 600;
+  color: #6c3483;
+  font-size: 1.1rem;
+}
+
+.formulario-input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #e0d7f3;
+  background: #f8f6ff;
+  font-size: 1rem;
+  color: #6c3483;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.formulario-input:focus {
+  border: 1.5px solid #a259e6;
+}
+
+.formulario-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #e0d7f3;
+  background: #f8f6ff;
+  font-size: 1rem;
+  color: #6c3483;
+  outline: none;
+  transition: border 0.2s;
+  min-height: 80px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.formulario-textarea:focus {
+  border: 1.5px solid #a259e6;
+}
+
+/* Ingredientes */
+.ingredientes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ingrediente-fila {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: #f3eafd;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.ingrediente-nombre {
+  flex: 2;
+  margin: 0;
+  border: 1px solid #d0c0e8;
+  background: #fff;
+}
+
+.ingrediente-cantidad {
+  flex: 1;
+  margin: 0;
+  border: 1px solid #d0c0e8;
+  background: #fff;
+}
+
+/* Pasos */
+.pasos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.paso-fila {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #f3eafd;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.paso-numero {
+  background: #a259e6;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.paso-texto {
+  flex: 1;
+  margin: 0;
+  border: 1px solid #d0c0e8;
+  background: #fff;
+  min-height: 60px;
+}
+
+/* Botones */
+.btn-agregar-campo {
+  background: #a259e6;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-agregar-campo:hover {
+  background: #7c3aed;
+}
+
+.btn-eliminar {
+  background: #ff4757;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-eliminar:hover {
+  background: #ff3742;
+}
+
+.formulario-botones {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e0d7f3;
+}
+
+.btn-actualizar {
+  background: linear-gradient(90deg, #a259e6 60%, #7c3aed 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-actualizar:hover {
+  background: linear-gradient(90deg, #7c3aed 60%, #a259e6 100%);
+}
+
+.btn-cancelar {
+  background: #f3f3f3;
+  color: #6c3483;
+  font-weight: 600;
+  border: 1.5px solid #e0d7f3;
+  border-radius: 12px;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-cancelar:hover {
+  background: #e9daf9;
+}
